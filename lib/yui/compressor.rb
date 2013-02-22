@@ -77,14 +77,14 @@ module YUI #:nodoc:
             end
 
           rescue Exception => e
-            raise RuntimeError, "compression failed"
+            raise RuntimeError, "compression failed (#{e})"
           end
         end
 
         if status.exitstatus.zero?
           output
         else
-          raise RuntimeError, "compression failed"
+          raise RuntimeError, "compression failed (#{e})"
         end
       end
     end
